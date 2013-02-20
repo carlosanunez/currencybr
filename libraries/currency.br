@@ -16,7 +16,7 @@ class CurrencyBR{
         return str_replace(',', '.', $float);
 	}
 	
-	public function toView($value)
+	public static function toView($value)
     {	
 		return 'R$ ' . number_format($value, 2, ',', '.');
 	}
