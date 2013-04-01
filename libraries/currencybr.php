@@ -10,14 +10,14 @@
 
 class CurrencyBR{
 
-	public static function toMysql($value)
+    public static function toMysql($value)
     {
-		$float = preg_replace('/[^,0-9]/i', '', $value);
+        $float = preg_replace('/[^,0-9]/i', '', $value);
         return str_replace(',', '.', $float);
-	}
-	
-	public static function toView($value, $color = false)
-    {	
+}
+
+    public static function toView($value, $color = false)
+    {
         $retorno = "sem valor";
         if ($color && $value != 0)
         {
@@ -29,12 +29,12 @@ class CurrencyBR{
             {
                 $class = 'positivo';
             }
-		    $retorno = '<span class="' . $class . '">R$ ' . number_format($value, 2, ',', '.') . '</span>';
+            $retorno = '<span class="' . $class . '">R$ ' . number_format($value, 2, ',', '.') . '</span>';
         } 
         else 
         {
-		    $retorno = 'R$ ' . number_format($value, 2, ',', '.');
+            $retorno = 'R$ ' . number_format($value, 2, ',', '.');
         }
         return $retorno;
-	}
+    }
 }
